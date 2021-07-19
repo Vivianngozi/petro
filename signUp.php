@@ -85,7 +85,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="transbox ">
   
   <div class="wrapper">    
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="change">
+  <img src="./images/FUTO_logo_main.png" class="center">
   <div >
       <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
         <span class="span">
@@ -143,10 +144,10 @@ echo $confirm_password; ?>">
 
     <div class="text-center">
 
-    <button type="submit" class="btn btn-danger btn-lg">Submit</button>
+    <button type="submit" class="btn btn-danger btn-lg" class="change">Submit</button>
   </div>
 
-    <p>Already have an account? <a href="login.php">Login</a></p>
+    <p>Already have an account? <a href="login.php" class="change">Login</a></p>
   </form>
 
 </div>

@@ -1,8 +1,9 @@
 <style>
 body {
-    background-image: url("./images/shafagh-faridifar-6yPiMRZzFH0-unsplash.jpg");
-    background-size: cover;
-
+    background-image: url("./images/chris-leboutillier-TUJud0AWAPI-unsplash.jpg");
+    background-size: 100% 100%;
+    /* height: 100px !important;
+    width: 100px !important; */
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
@@ -52,7 +53,8 @@ body {
     background: rgba(0,0,0,0.6);
     background-size: cover;
     padding: 40px;
-    
+    padding-bottom: 0px;
+    margin-top: 0px;
     
 }
 .transbox p {
@@ -77,7 +79,7 @@ a {
     opacity: 1;
 }
 a:hover {
-    color: tomato;
+    color: #f1c900;
     outline: none;
 }
 ::placeholder{
@@ -97,10 +99,10 @@ a:hover {
     color: white;
 }
 img {
-    height: 200px;
-    width: 250px !important;
+    height: 100px;
+    width: 100px !important;
     margin-bottom: 50px !important;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .center {
     display: block;
@@ -111,5 +113,13 @@ img {
   }
   .color {
       color: white;
+  }
+  .btn {
+      background-color: #f1c900;
+  }
+  .change {
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      margin-top: 0px;
   }
   </style>
