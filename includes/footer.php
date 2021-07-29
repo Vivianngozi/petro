@@ -1,8 +1,8 @@
 <footer class="main-footer">
-  <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+  <strong>Copyright &copy; 1980 <a href="https://adminlte.io">Federal University of Technology Owerri</a>.</strong>
   All rights reserved.
   <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 3.1.0
+    <b>Designed by Vivian</b>
   </div>
 </footer>
 

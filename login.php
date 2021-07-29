@@ -2,6 +2,11 @@
 <?php include "loginstyle.php"; ?>
 <?php
 
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true ){
+  header("location: index.php");
+  exit;
+}
+
 $email = $password = "";
 $email_err = $password_err = "";
 
@@ -20,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if(empty($username_err) && empty($password_err)){
-    $sql = "SELECT id, email, password FROM loginapp WHERE email = ?" ;
+    $sql = "SELECT id, username, email,  password FROM loginapp WHERE email = ?" ;
 
     if($prepare = mysqli_prepare($connect, $sql)){
       mysqli_stmt_bind_param($prepare, "s", $param_email);
@@ -31,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_store_result($prepare);
 
         if(mysqli_stmt_num_rows($prepare) == 1) {
-          mysqli_stmt_bind_result($prepare, $id, $username, $hashed_password);
+          mysqli_stmt_bind_result($prepare, $id, $username, $email, $hashed_password);
           
           if(mysqli_stmt_fetch($prepare)){
 
@@ -40,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
               $_SESSION['loggedin']= true;
               $_SESSION['id'] = $id;
-              $_SESSION['email'] = $email;
+              $_SESSION['username'] = $username;
 
               header("location:index.php");
 

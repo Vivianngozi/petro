@@ -9,13 +9,36 @@
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+<?php
+    if (isset($_SESSION["username"])) {
+      $username = $_SESSION["username"];
+
+      $query = "SELECT * FROM loginapp WHERE username = '$username' ";
+
+      $select_profile = mysqli_query($connect, $query);
+
+      while($row = mysqli_fetch_array($select_profile)) {
+          $id = $row['id'];
+          $username = $row['username'];
+          $image= $row['image_file'];
+
+    ?>
+
+
       <div class="image">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <img src="images/<?php echo $row['image_file']; ?>" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a href="profile.php" class="d-block"><?php echo $row['name']; ?></a>
       </div>
     </div>
+
+    <?php
+      }
+    }
+
+    ?>
 
     <!-- SidebarSearch Form -->
 
@@ -25,7 +48,7 @@
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
-          <a href="index.php" class="nav-link active">
+          <a href="index.php" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -51,30 +74,39 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="work_input.php" class="nav-link">
+              <a href="create.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Work input</p>
+                <p>Create result</p>
               </a>
             </li>
 
+            <li class="nav-item">
+              <a href="work_inputdate.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>View result</p>
+              </a>
+            </li>
+          
+        
             <li class="nav-item">
               <a href="calculator.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Calculator</p>
               </a>
             </li>
-          </ul>
+            </ul>
+          
         </li>
 
         <li class="nav-item">
           <a href="profile.php" class="nav-link">
-            <i class="far fa-user"></i>
+            <i class="nav-icon far fa-user"></i>
             <p>Profile</p>
 
           </a>
         </li>
       </ul>
-    
+  
     </nav>
     <!-- /.sidebar-menu -->
   </div>

@@ -95,7 +95,7 @@ a:hover {
     width: 100%;
 }
 .transbox button[type=submit] :hover {
-    background-color: cyan;
+    background-color: green;
     color: white;
 }
 img {

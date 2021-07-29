@@ -2,6 +2,7 @@
 <?php
 session_start();
 ?>
+<?php include "functions.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +30,9 @@ session_start();
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
